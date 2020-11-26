@@ -1,0 +1,68 @@
+﻿Title,Code,Date,Content,Type,Images,Captions,Gifs
+Eiffel Tower,eiffel-tower,Jan 2017,"Laser cut acrylic Eiffel Tower. One of my first laser cutting projects, making a 3D shape out of cut out 2D pieces. I didn't use any 3D modeling software to visualize it, I just went for it. The stand is two clear pieces that slot together, and the ten blue pieces stack on top of the stand.",small-2,"eiffel_tower.jpg
+eiffel_tower_2.jpg","Finished product
+Disassembled pieces",
+Nodes,nodes,2017,ejwioa;fewaiojwafoeijjiwa,small-2,"nodes_1.jpg
+nodes_2.jpg","Pile of test pieces
+Sweet spot at 1/140 inch",
+Ferris Wheel,ferris-wheel,Oct 2017,afowji;eiojawfewfaoeji,large-slide,"ferriswheel.png
+ferriswheel_1.jpg
+ferriswheel_2.jpg
+ferriswheel_3.jpg","feijwofweiojfwejio
+Finished product
+Paper cutout of locking mechanism
+Drawing of design",ferriswheel.png
+Undertale Charms,undertale,Jun 2018,"Acrylic painted Undertale charms. I made these on the laser cutter, and masked them with the paper that came on the 1/8"" acrylic. I spray painted them black/red, and then peeled off the masking. However, there was often spillover despite the masking, and I had to rub it off with Goof-off, but then that left a weird white residue on the acrylic. Only a few of them survived unscathed. I sent these to random people on Reddit, about 12 packages in total.",small-1,undertale.jpg,Finished charms,
+Trebuchet,trebuchet,Nov 2018,"Wooden laser-cut trebuchet, for my brother's birthday. It has a basket to put something heavy in, and a little wheel that could wind up a string. Put something small in the basket, release the string, and off it goes. I gave it to him unassembled, as a challenge.",small-1,trebuchet_1.jpg,Finished product,
+Headphones Holder,hh,Nov 2017,"Under-desk headphones holder. I wanted something to hang my headphones on that wouldn't take up any of my desk space. I designed it in Rhino, printed it at my school's fancy 3D printer, and primed/painted it. I also made a smaller version to test paint on. I must have done at least 8 coats of primer and paint, because I'd keep sanding it to try to get rid of the layer lines. There's a hole in the back to route my wires through, and there are indents in the top to fit command strips (I didn't want to screw into my desk). It served me well for years, though the paint did rub off after a while.",large-slide,"hh_1.jpg
+hh_2.jpg
+hh_3.jpg
+hh_4.jpg
+hh_5.jpg
+hh_6.jpg
+hh_7.jpg","Finished product
+Close up of painted & sanded product
+Mini prototype
+Primer coat on
+Fresh off the 3D printer
+Fresh coat of paint
+Epoxy to cover layer lines",
+Pencil Holder,pencil-holder,Apr 2017,"Laser-cut plywood pencil holder. This was one of my bigger laser cutter projects, made completely from 1/8"" plywood from JoAnn Fabric. I designed it all in Illusrtator and cut it out at my high school's laser cutter. I used a nodes method (one of my other projects - see below) where the parts that fit together were a bit too tight so you'd have to force them in and they would snap fit together. However, not all the fits were that tight so I ended up using a bit of wood glue on some parts. the inserts that divide the tall part and the short part into different sections are removable. There's also a ruler holder on the front, which incidentally also decided for me how long the whole thing was going to be (1 foot).",small-2,"pencilholder_1.jpg
+pencilholder_2.jpg","Finished product
+Unstained work in progress",
+Moth/Heart Epoxy Art,heart,Jun 2018,"School project about a novel. It was laser cut and laser etched to cut out some parts of a tape-covered plywood sheet. I used the tape to mask the black paint and the white paint, and I poured blue epoxy into the hole. I certainly had some leakage problems and some bleeding problems, but it turned out okay in the end. I wish I sanded it a bit more.",small-2,"heart_1.jpg
+heart_2.jpg","Finished product
+Clamped to let epoxy cure",
+Hot Dog Pillow Pet,hotdog,Jan 2020,"Sewing project that I used to learn how to sew. I always thought it would be funny to have a hot dog pillow pet, like the bun folds out and the dog is removable. The yarn would be a placeholder for some thicker soft rope, it's supposed to be like ketchup and mustard. I was also planning on putting a face or some grill marks on the hot dog. I learned a lot about pattern making and how to make stuffed animals.",small-1,hotdog.jpg,Finished prototype,
+Robotics,robot,2017-2019,"First Robotics projects. I led my high school First Robotics team, so here are a collection of robots from that time. Our team was pretty small and pretty new, so I did a lot of the work in terms of designing and building the robot. These robots did tasks like stacking blocks, and collecting/depositing balls.",small-2,"robotics.png
+robotics_2.png","Robot for 2017-2018 season
+Earlier version of '17-'18 robot",robotics.png
+Automatic Light Switch,light-switch,Aug 2020,"Voice command operated light switcher. I made this because I was too lazy to get up and turn off the lights when I was in bed. It works through my Google Home: I set up a custom command through IFTTT and had it send a signal to the arduino, which turns a servo one way or another to turn the lights on or off.
+
+I had a few problems with the strength of the servo, which was just some random one that I had lying around and then somehow committed myself to using that one specifically. But I was able to add some mechanical advantage to make it work.",large-slide,lightswitch.png,Finished product,lightswitch.png
+Laptop Holder,laptop-holder,Jul 2020,"Laptop holder with capacity for 2 Macbook Airs that attaches to wall. I designed and 3D printed these 3 brackets, ran into some issues with bridging and supports, but overall it works fine. I added 45 degree supports just to make sure it would never fail and drop my computer.",small-1,laptopholder_1.jpg,"Finished product, mounted on wall",
+Flowers and Vase,flowers,Feb 2020,"Handmade vase and epoxy flowers as a gift. I got some random craft wood from Michaels and turned it on the wood lathe to make a mini vase. I sanded it a bit to make it asymmetrical (the opening to the vase is slightly lower on one side). I stained it a bit and sprayed it with some random sealant I found in the Makerspace.
+
+The epoxy flowers were made of some thin wire. I bent them into the flower shape with pliers, then dipped them in glue (mod podge). After letting that dry, I dipped it in epoxy colored with blue food coloring. Then, I had to come up with some convoluted stands to let the flowers dry without the epoxy gathering at the bottom or tips of the petals. I made at least twenty, and I was happy with like four.",small-2,"flowers_1.jpg
+flowers_3.jpg","Finished product
+Glue accumulated on petals",
+Clock,clock,Aug 2020,"LED Matrix clock, with 3D printed frame and various hardware. I designed in SolidWorks and printed the frame with my Prusa for an 8x32 LED matrix. It's powered by an arduino. I ran into a lot of problems with the clock being too bright, so I added a piece of paper between the matrix and the holes on the outside.",large-slide,"clock_1.jpg
+clock_2.jpg
+clock_3.jpg
+clock_4.jpg","Finished product
+Arduino held on back of clock
+Paper to diffuse and dampen light
+Back of clock",
+DDR,ddr,2019-Present,"Student-made Dance Dance Revolution machine, including cabinet and 2 dance pads. This project is currently in progress. I am leading the building and mechanical engineering part, which includes planning and constructing the cab and the pad.
+
+Currently: we have a prototype of the pad, which is made of 12 identical parts that slot together. Still planning the cab, but current plans can be seen in the images.",large-slide,"ddr_1.png
+ddr_2.png
+ddr_3.png
+ddr_4.jpg
+ddr_5.jpg
+ddr_6.jpg","Artistic rendering of step pad
+Model of cab
+Drawings of panels
+Step pad prototype
+Pad actuation prototype
+Pad drawing",

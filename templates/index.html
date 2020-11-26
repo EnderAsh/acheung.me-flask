@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="This is an awesome website">
+		<title>Ashley Cheung's Portfolio</title>
+
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+
+		<script>var __adobewebfontsappname__="dreamweaver"</script>
+		<script src="http://use.edgefonts.net/nova-mono:n4:default;nixie-one:n4:default.js" type="text/javascript"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="{{ url_for('static', filename='js/jquery.jcarousel.min.js') }}"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.min.css') }}">
+		<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.gifplayer.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/gifplayer.css') }}">
+
+
+		<!--AOS-->
+
+		<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+		<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+
+	</head>
+
+	<body>
+		<h1>Ashley's Portfolio</h1>
+
+		<button class="tablink" onclick="openPage('Home', this, 'lightblue')" id="defaultOpen">Home</button>
+		<button class="tablink" onclick="openPage('Resume', this, 'palegreen')">Resume</button>
+		<button class="tablink" onclick="openPage('Contact', this, 'lightyellow')">Contact</button>
+
+
+		<div id="Home" class="tabcontent">
+
+			<br/><br/><br/><br/>
+
+	  		<h2>My Projects</h2>
+
+            <div class="grid-container">
+
+                {# creating cards #}
+                {% for card in cards %}
+
+                    {# creating the small cards with 1 picture #}
+                    {% if card["Type"] == "small-1" %}
+                        <div class="card small-1" style="grid-area:{{ card["Code"] }}">
+                            <h2>{{ card["Title"] }}</h2>
+                            <h3>{{ card["Date"] }}</h3>
+                            <h5>{{ card["Content"] }}</h5>
+
+                            <img src="{{ url_for('static', filename="images/"+card["Images"].0) }}" data-caption="{{ card["Captions"].0 }}" data-grid-area="img1">
+                        </div>
+                    {% endif %}
+
+                    {# creating the small cards with 2 pictures #}
+                    {% if card["Type"] == "small-2" %}
+                        <div class="card small-2" style="grid-area:{{ card["Code"] }}">
+                            <h2>{{ card["Title"] }}</h2>
+                            <h3>{{ card["Date"] }}</h3>
+                            <h5>{{ card["Content"] }}</h5>
+
+                            <img src="{{ url_for('static', filename="images/"+card["Images"].0) }}" data-caption="{{ card["Captions"].0 }}" data-grid-area="img1">
+                            <img src="{{ url_for('static', filename="images/"+card["Images"].1) }}" data-caption="{{ card["Captions"].1 }}" data-grid-area="img2">
+                        </div>
+                    {% endif %}
+
+                    {# creating the large cards with slideshows#}
+                    {% if card["Type"] == "large-slide" %}
+                        <div class="card large-slide" style="grid-area:{{ card["Code"] }}">
+                            <h2>{{ card["Title"] }}</h2>
+                            <h3>{{ card["Date"] }}</h3>
+                            <h5>{{ card["Content"] }}</h5>
+
+                            <div class="jcarousel-wrapper-overall">
+                                <a href="#" class="jcarousel-control-prev">
+							        <img src="{{ url_for('static', filename="images/leftarrow.svg") }}" alt="left arrow">
+						        </a>
+                                <a href="#" class="jcarousel-control-next">
+                                    <img src="{{ url_for('static', filename="images/leftarrow.svg") }}" alt="left arrow" class="flipped">
+                                </a>
+
+                            <div class="jcarousel-wrapper">
+                                <div class="jcarousel">
+                                    <ul>
+                                        {% for i in range(card["Images"]|length) %}
+                                            {% if card["Images"][i] in card["Gifs"] %}
+                                                <li>
+                                                    <img src="{{ url_for('static', filename="images/"+card["Images"][i]) }}"
+                                                         class="gifplayer"
+                                                         data-gif="{{ url_for('static', filename="images/"+card["Images"][i][:card["Images"][i].rfind(".")]+".gif") }}">
+                                                </li>
+                                            {% else %}
+                                                <li> <img src="{{ url_for('static', filename="images/"+card["Images"][i]) }}" data-caption="{{ card["Captions"][i] }}"> </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <p class="jcarousel-pagination"></p>
+                            </div>
+
+                            </div>
+                        </div>
+                    {% endif %}
+
+
+                {% endfor %}
+            </div>
+		</div>
+
+		<div id="Resume" class="tabcontent">
+	  		<h3>Resume</h3>
+		  	<p>Some news this fine day!</p>
+		</div>
+
+		<div id="Contact" class="tabcontent">
+		  	<h3>Contact</h3>
+		  	<p>Get in touch, or swing by for a cup of coffee.</p>
+		</div>
+
+
+	</body>
+
+	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</html>
