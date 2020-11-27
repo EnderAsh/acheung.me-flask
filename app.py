@@ -16,7 +16,7 @@ for card in cards:
 
 if os.environ.get('FLASK_ENV', '') != 'development':
     app.config['SERVER_NAME'] = 'acheung.me'
-
+else:
     @app.context_processor
     def override_url_for():
         return dict(url_for=dated_url_for)
