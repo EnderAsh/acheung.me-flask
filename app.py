@@ -1,8 +1,19 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 import csv
 import os
 
 app = Flask(__name__)
+app.config['SERVER_NAME'] = 'acheung.test:5000'
+
+cards = []
+with open("data.csv", encoding="utf-8-sig") as data:
+    reader = csv.DictReader(data)
+    for row in reader:
+        cards.append(row)
+
+for card in cards:
+    card["Images"] = card["Images"].split("\n")
+    card["Captions"] = card["Captions"].split("\n")
 
 
 @app.context_processor
@@ -20,27 +31,15 @@ def dated_url_for(endpoint, **values):
     return url_for(endpoint, **values)
 
 
-@app.route('/scooby_doo')
+@app.route('/')
 def hello_world():
     return render_template('index.html', cards=cards)
 
-@app.route('/mobilito')
+
+@app.route('/m')
 def mobile():
     return render_template('index_mobile.html', cards=reversed(cards))
 
 
 if __name__ == '__main__':
-    cards = []
-    with open("data.csv", encoding="utf-8-sig") as data:
-        reader = csv.DictReader(data)
-        for row in reader:
-            cards.append(row)
-
-    for card in cards:
-        card["Images"] = card["Images"].split("\n")
-        card["Captions"] = card["Captions"].split("\n")
-        print(card["Captions"])
-
-
-
     app.run()
