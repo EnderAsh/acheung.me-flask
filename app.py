@@ -14,7 +14,7 @@ for card in cards:
     card["Images"] = card["Images"].split("\n")
     card["Captions"] = card["Captions"].split("\n")
 
-if os.environ['FLASK_ENV'] != 'development':
+if os.environ.get('FLASK_ENV', '') != 'development':
     app.config['SERVER_NAME'] = 'acheung.me'
 
     @app.context_processor
