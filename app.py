@@ -1,9 +1,10 @@
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for
 import csv
 import os
 
 app = Flask(__name__)
-app.config['SERVER_NAME'] = 'acheung.test:5000'
+if os.environ['FLASK_ENV'] != 'development':
+    app.config['SERVER_NAME'] = 'acheung.me'
 
 cards = []
 with open("data.csv", encoding="utf-8-sig") as data:
