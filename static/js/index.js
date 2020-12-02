@@ -1,4 +1,6 @@
 // JavaScript Document
+
+//jcarousel
 (function($) {
     $(function() {
         var jcarousel = $('.jcarousel');
@@ -49,7 +51,7 @@
     });
 })(jQuery);
 
-
+//stuff for the full page tabs
 function openPage(pageName, elmnt, color) {
 	// Hide all elements with class="tabcontent" by default */
 	var i, tabcontent, tablinks;
@@ -71,9 +73,10 @@ function openPage(pageName, elmnt, color) {
 	elmnt.style.backgroundColor = color;
 }
 
-// Get the element with id="defaultOpen" and click on it
+// Get the element with id="defaultOpen" and click on it (opening home by default)
 document.getElementById("defaultOpen").click();
 
+//this function runs at the start
 $(function() {
 	$('.gif-click').hide();
 	$("#enlarged-image-wrapper").hide();
@@ -96,8 +99,19 @@ $(function() {
 	//gif player
 	$('.gifplayer').gifplayer();
 
+	if (navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)
+    ) {
+		window.location="/m"
+	}
 });
 
+//creates all the captions for the images
 function createCaption(x,image) {
 	var imagewrapper = document.createElement("div");
 	$(imagewrapper).addClass("imagewrapper");
@@ -119,6 +133,7 @@ function createCaption(x,image) {
 	imagewrapper.appendChild(caption);
 }
 
+//creates all captions for mobile (they are always visible)
 function createCaptionMobile(x,image) {
 	var imagewrapper = document.createElement("div");
 	$(imagewrapper).addClass("imagewrapper");
@@ -142,6 +157,7 @@ function createCaptionMobile(x,image) {
 
 $("img").hover(showCaption, hideCaption);
 
+//shows caption on hover
 function showCaption() {
 	let parent= $(this).parent()
 	let caption = parent.find(".caption")
@@ -153,28 +169,30 @@ function showCaption() {
 
 }
 
-
+//hides caption when mouse leaves
 function hideCaption() {
 	let parent= $(this).parent()
 	let caption = parent.find(".caption")
-
 
 	$(caption).animate({bottom: -20}, {duration:250, queue: false});
 	$(caption).animate({opacity: 0}, {duration: 250, queue: false, easing:"easeOutQuad"})
 }
 
-
+//enlarges image on click
 function enlargeImage() {
-	console.log("whahofawi");
+	let imgsrc = this.src;
+	let parent= $(this).parent()
+	let caption = parent.find(".caption")
 
-	var imgsrc = this.src;
-	$("#enlarged-image").attr("src",imgsrc);
+	let enlarged_image = $("#enlarged-image");
+	enlarged_image.attr("src",imgsrc);
+	// $("#enlarged-image").attr("data-caption",this.getAttribute("data-caption"))\
 
-	$("#enlarged-image-wrapper").show();
-
+	let enlarged_wrapper = $("#enlarged-image-wrapper");
+	enlarged_wrapper.show();
 }
 
-$("#enlarged-image-wrapper").click(hideEnlargedImage)
+$("#enlarged-image-wrapper").click(hideEnlargedImage);
 
 function hideEnlargedImage() {
 	$("#enlarged-image-wrapper").hide();

@@ -76,7 +76,9 @@
                             <h3>{{ card["Date"] }}</h3>
                             <h5>{{ card["Content"] }}</h5>
 
+                            {# create carousel of images#}
                             <div class="jcarousel-wrapper-overall">
+                                {# create left/right arrows#}
                                 <a href="#" class="jcarousel-control-prev">
 							        <img src="{{ url_for('static', filename="images/leftarrow.svg") }}" alt="left arrow">
 						        </a>
@@ -84,31 +86,42 @@
                                     <img src="{{ url_for('static', filename="images/leftarrow.svg") }}" alt="left arrow" class="flipped">
                                 </a>
 
-                            <div class="jcarousel-wrapper">
-                                <div class="jcarousel">
-                                    <ul>
-                                        {% for i in range(card["Images"]|length) %}
-                                            {% if card["Images"][i] in card["Gifs"] %}
-                                                <li>
-                                                    <img src="{{ url_for('static', filename="images/"+card["Images"][i]) }}"
-                                                         class="gifplayer"
-                                                         data-gif="{{ url_for('static', filename="images/"+card["Images"][i][:card["Images"][i].rfind(".")]+".gif") }}">
-                                                </li>
-                                            {% else %}
-                                                <li> <img src="{{ url_for('static', filename="images/"+card["Images"][i]) }}" data-caption="{{ card["Captions"][i] }}"> </li>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </ul>
+                                <div class="jcarousel-wrapper">
+                                    <div class="jcarousel">
+                                        <ul>
+                                            {# put each image in the carousel #}
+                                            {% for i in range(card["Images"]|length) %}
+                                                {# check if current image is part of gifs list; if so, find the matching gif with same name and assign it to the image #}
+                                                {% if card["Images"][i] in card["Gifs"] %}
+                                                    <li>
+                                                        <img src="{{ url_for('static', filename="images/"+card["Images"][i]) }}"
+                                                             class="gifplayer"
+                                                             data-gif="{{ url_for('static', filename="images/"+card["Images"][i][:card["Images"][i].rfind(".")]+".gif") }}">
+                                                    </li>
+
+                                                {# creating normal images in the carousel #}
+                                                {% else %}
+                                                    <li> <img src="{{ url_for('static', filename="images/"+card["Images"][i]) }}" data-caption="{{ card["Captions"][i] }}"> </li>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    {# creating dots at the bottom of the carousel #}
+                                    <p class="jcarousel-pagination"></p>
                                 </div>
-                                <p class="jcarousel-pagination"></p>
-                            </div>
 
                             </div>
                         </div>
                     {% endif %}
-
-
                 {% endfor %}
+
+                {# enlarged image #}
+                <div id="enlarged-image-wrapper" style="display: none;">
+                    <div id="enlarged-image-container">
+                        <img src="images/eiffel_tower.jpg" id="enlarged-image" data-caption="placeholder caption">
+                    </div>
+				</div>
+
             </div>
 		</div>
 

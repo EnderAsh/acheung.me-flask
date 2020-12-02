@@ -184,10 +184,18 @@ img {
 	background-color: rgba(0,0,0,0.53);
 }
 
-#enlarged-image {
+#enlarged-image-container {
+	/*position: fixed;*/
 	width: 60%;
-	max-width: 60%;
 	height: 60%;
+	left: 0;
+	top: 0;
+	margin: 0 auto;
+}
+
+#enlarged-image {
+	width: 100%;
+	height: 100%;
 	display: block;
 	margin: auto;
 	margin-top: 10vh;
