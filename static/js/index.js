@@ -91,6 +91,7 @@ $(function() {
 	$('.jcarousel-control-prev img').addClass("do-not-enlarge");
 	$('.jcarousel-control-next img').addClass("do-not-enlarge");
 	$('button img').addClass("do-not-enlarge");
+	$('.gifplayer').addClass("do-not-enlarge")
 	$("img:not(.do-not-enlarge)").click(enlargeImage);
 
 	$("img[data-caption]").each(createCaption);
@@ -182,7 +183,6 @@ function hideCaption() {
 function enlargeImage() {
 	let imgsrc = this.src;
 	let parent= $(this).parent()
-	let caption = parent.find(".caption")
 
 	let enlarged_image = $("#enlarged-image");
 	enlarged_image.attr("src",imgsrc);
