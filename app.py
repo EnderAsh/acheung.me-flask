@@ -34,7 +34,7 @@ else:
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html', cards=cards)
+    return render_template('index.html', cards=reversed(cards))
 
 
 @app.route('/m')
