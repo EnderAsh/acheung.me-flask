@@ -99,6 +99,15 @@ body, html {
 	background-size: cover;
 }
 
+#Art {
+	background-color: lightblue;
+
+    background: url('../images/background.svg') no-repeat ;
+	background-repeat:   no-repeat;
+  	background-position: center center;
+	background-size: cover;
+}
+
 #Resume {
 	background-color: palegreen;
 
